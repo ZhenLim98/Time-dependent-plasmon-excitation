@@ -9,7 +9,7 @@ kap2n = kapn(q,om,g,Omega,e2,Ng);
 %produces the k vectors
 
 out = zeros(2 * Ng + 1);
-    for i = 1: Ng
+    for i = 1: 1
         %constructing vector of conductivity frequency coefficients
         sig = sigma2(om + recVecs * Omega, om, Omega, Ng)./ ...
               e0 .*(om + (recVecs).* Omega);
