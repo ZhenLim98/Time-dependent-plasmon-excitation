@@ -25,7 +25,7 @@ out(zero) =  (y1 + (y2-y1) * T/(2*t1));
 g_sigma = 4;
 mu = 0;
 %68% of the content is within +- g sigma here
-gaussian =  1/sqrt (2*pi*g_sigma*g_sigma)  * exp(- (n_vec - mu) .* (n_vec-mu)./(2 * g_sigma * g_sigma));
+gaussian =  1/sqrt (2*pi*g_sigma*g_sigma)  * exp(- abs(n_vec - mu) .* abs(n_vec-mu)./(2 * g_sigma * g_sigma));
 out = out .* gaussian;
 % %% Finding and scaling IFT
 % L=length(out);                      % series length
