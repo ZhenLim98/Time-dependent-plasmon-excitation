@@ -7,11 +7,11 @@ function [ out ] = lambda_i(  n_vec,length_vec, j, Ng, Omega)
     %period length t2
 %This code section could be wrong!
 
-Drude_w = 76.11e8  ;     
+Drude_w = 76.11e9   ;     
 y1 = (0.2 )* Drude_w  ;
 y2 = (0.8 )*  Drude_w ;
 T = 2*pi/Omega; %T is the period of the pump, same as the period of the modulation
-t1 = 0.1*T; %length of the rising drude weight
+t1 = 0.05*T; %rising time
 
 exp_t = exp(-2* pi * 1i .* t1 .* n_vec ./ T) ;
 out = (y1-y2)./(2*pi*1i .* n_vec) .* (1 - 1/(T - t1) * (T - t1 .* exp_t));
